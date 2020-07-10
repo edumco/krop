@@ -19,6 +19,7 @@ jobs:
       snaps:
         name: snapcraft
         channel: latest/stable
+        confinement: classic
     before_install: 
       - sudo apt-get install --yes qtbase5-dev
     install: snapcraft
