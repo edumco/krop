@@ -18,12 +18,15 @@ addons:
 jobs:
   fast_finish: true
 
-before-install:
-  - pip install -r requirements.txt
-  - python3 setup.py install
-  - pip uninstall krop
-
 install:
+  - pip install -r requirements.txt
+  - pip check
+  - python3 setup.py install
+  - pip check
+  - krop --version
+  - pip uninstall -y krop
+  
+before-script:
   - snapcraft
 
 script: krop --version
