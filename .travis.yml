@@ -25,7 +25,7 @@ install:
   - pip check
   - krop --version
   - pip uninstall -y krop
-  - apt install --yes qtbase5-dev
+  - sudo apt-get install --yes qtbase5-dev
   
 before-script:
   - snapcraft
