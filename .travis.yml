@@ -2,7 +2,7 @@ language: python
 
 os: linux
 
-dist: bionic
+dist: xenial
 
 python:
   - "3.6.10"
