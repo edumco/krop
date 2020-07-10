@@ -22,7 +22,9 @@ jobs:
         confinement: classic
     before_install: 
       - sudo apt-get install --yes qtbase5-dev
-    install: snapcraft
+    install:
+      - snapcraft
+      - snap install krop_0.4.13.1_amd64.snap
     
 install:
   - pip install -r requirements.txt
