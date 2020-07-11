@@ -1,0 +1,22 @@
+name: Release Drafter
+
+on: push
+
+jobs:
+  build-snap:
+    runs-on: ubuntu-1604
+  
+    steps:
+    
+    - name: Checkout 
+      uses: actions/checkout@v2
+
+    - name: Install Snapcraft
+      uses: samuelmeuli/action-snapcraft@v1
+    
+    - name: Build Snap
+      run: snapcraft
+    
+    - uses: release-drafter/release-drafter@v5
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
